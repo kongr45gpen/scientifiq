@@ -10,8 +10,14 @@
     <main>
         <p class="fs-5 col-md-8">Ice melts at 2&deg;C.</p>
 
-        <button type="button" class="btn btn-success">Real</button>
-        <button type="button" class="btn btn-danger">Fake</button>
+        {{#response}}
+            Your response is {{response.isReal}}
+        {{/response}}
+
+        <form action="" method="post">
+            <button type="submit" class="btn btn-danger" name="isReal" value="false">Fake</button>
+            <button type="submit" class="btn btn-success" name="isReal" value="true">Real</button>
+        </form>
     </main>
 
     <footer class="pt-5 my-5 text-muted border-top">
